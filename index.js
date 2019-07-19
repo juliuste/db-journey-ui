@@ -1,19 +1,24 @@
 'use strict'
 
 const h = require('virtual-dom/h')
-const colors = require('vbb-line-colors')
 const products = require('vbb-util/products')
 const ms = require('ms')
 const flatten = require('lodash/flatten')
 
 const renderTransferPosition = require('./lib/render-transfer-position')
 
-const cls = 'vbb-journey-ui-'
+const cls = 'db-journey-ui-'
 
 const pedestrians = [
 	'🚶🏻‍♀️', '🚶🏼‍♀️', '🚶🏽‍♀️', '🚶🏾‍♀️', '🚶🏿‍♀️',
 	'🚶🏻‍♂️', '🚶🏼‍♂️', '🚶🏽‍♂️', '🚶🏾‍♂️', '🚶🏿‍♂️'
 ]
+
+const productMap = product => {
+	if (['nationalExpress', 'nationalExp', 'national'].includes(product)) return 'express'
+	if (['regionalExpress', 'regionalExp', 'regional'].includes(product)) return 'regional'
+	return product
+}
 
 const dirArrow = h('abbr', {title: 'in direction of'}, '→')
 
@@ -80,16 +85,15 @@ const setup = (formatTime, formatDelay, actions = {}) => {
 		let color = {}
 		let symbol = null
 		if (line.product) {
+			const mappedProduct = productMap(line.product)
 			symbol = h('img', {
 				className: cls + 'product',
-				alt: line.product,
-				src: `https://raw.githubusercontent.com/derhuerst/vbb-logos/v2/${line.product}.svg`
+				alt: mappedProduct,
+				src: `https://raw.githubusercontent.com/derhuerst/vbb-logos/v2/${mappedProduct}.svg?sanitize=true`
 			})
 
-			if (colors[line.product] && colors[line.product][line.name]) {
-				color = colors[line.product][line.name]
-			} else if (products[line.product]) {
-				color = {fg: '#fff', bg: products[line.product].color}
+			if (products[mappedProduct]) {
+				color = {fg: '#fff', bg: products[mappedProduct].color}
 			}
 		}
 

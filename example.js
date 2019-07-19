@@ -51,9 +51,9 @@ const renderPage = (body) => {
 	])
 }
 
-const vbb = createVbbClient('vbb-journey-ui example')
+const db = createDbClient('db-journey-ui example')
 
-vbb.journeys('900000100001', '900000100013', {results: 1, stopovers: true})
+db.journeys('8000001', '8000002', {results: 1, stopovers: true})
 .then(([journey]) => {
 	const page = renderPage(renderJourney(journey, range(journey.legs.length)))
 	console.log('<!DOCTYPE html>\n' + toString(page))

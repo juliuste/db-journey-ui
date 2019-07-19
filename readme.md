@@ -1,20 +1,20 @@
-# vbb-journey-ui
+# db-journey-ui
 
 **[virtual-dom](https://github.com/Matt-Esch/virtual-dom) UI components for displaying a journey** like in Google Maps.
 
-[![npm version](https://img.shields.io/npm/v/vbb-journey-ui.svg)](https://www.npmjs.com/package/vbb-journey-ui)
-[![build status](https://img.shields.io/travis/derhuerst/vbb-journey-ui.svg)](https://travis-ci.org/derhuerst/vbb-journey-ui)
-![ISC-licensed](https://img.shields.io/github/license/derhuerst/vbb-journey-ui.svg)
+[![npm version](https://img.shields.io/npm/v/db-journey-ui.svg)](https://www.npmjs.com/package/db-journey-ui)
+[![build status](https://img.shields.io/travis/juliuste/db-journey-ui.svg)](https://travis-ci.org/juliuste/db-journey-ui)
+![ISC-licensed](https://img.shields.io/github/license/juliuste/db-journey-ui.svg)
 [![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
 [![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
 
-![screenshot of vbb-journey-ui](screenshot.png)
+![screenshot of db-journey-ui](screenshot.png)
 
 
 ## Installing
 
 ```shell
-npm install vbb-journey-ui
+npm install db-journey-ui
 ```
 
 
@@ -26,7 +26,7 @@ npm install vbb-journey-ui
 const {DateTime} = require('luxon')
 const ms = require('ms')
 const createVbbClient = require('vbb-hafas')
-const createRenderJourney = require('vbb-journey-ui')
+const createRenderJourney = require('db-journey-ui')
 const toString = require('virtual-dom-stringify')
 
 const formatTime = (when) => {
@@ -47,8 +47,8 @@ const formatDelay = (delay) => {
 
 const renderJourney = createRenderJourney(formatTime, formatDelay, {})
 
-const vbb = createVbbClient('my-awesome-program')
-vbb.journeys('900000003201', '900000024101', {results: 1, stopovers: true})
+const db = createVbbClient('my-awesome-program')
+db.journeys('8000001', '8000002', {results: 1, stopovers: true})
 .then((journeys) => {
 	const tree = renderJourney(journeys[0])
 	console.log(toString(tree))
@@ -82,4 +82,4 @@ renderJourney(journey, [detailsFor], [actions]) => virtualDomTree
 
 ## Contributing
 
-If you have a question or have difficulties using `vbb-journey-ui`, please double-check your code and setup first. If you think you have found a bug or want to propose a feature, refer to [the issues page](https://github.com/derhuerst/vbb-journey-ui/issues).
+If you have a question or have difficulties using `db-journey-ui`, please double-check your code and setup first. If you think you have found a bug or want to propose a feature, refer to [the issues page](https://github.com/juliuste/db-journey-ui/issues).

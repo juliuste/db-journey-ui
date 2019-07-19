@@ -1,7 +1,7 @@
 {
-	"name": "vbb-journey-ui",
+	"name": "db-journey-ui",
 	"description": "UI component for displaying a journey like in Google Maps.",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"main": "index.js",
 	"files": [
 		"index.js",
@@ -17,9 +17,9 @@
 		"virtual-dom"
 	],
 	"author": "Jannis R <mail@jannisr.de>",
-	"homepage": "https://github.com/derhuerst/vbb-journey-ui",
-	"repository": "derhuerst/vbb-journey-ui",
-	"bugs": "https://github.com/derhuerst/vbb-journey-ui/issues",
+	"homepage": "https://github.com/juliuste/db-journey-ui",
+	"repository": "juliuste/db-journey-ui",
+	"bugs": "https://github.com/juliuste/db-journey-ui/issues",
 	"license": "ISC",
 	"engines": {
 		"node": ">=6"
