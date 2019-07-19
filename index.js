@@ -170,8 +170,9 @@ const setup = (formatTime, formatDelay, actions = {}) => {
 				})
 			}, [
 				h('div', { className: cls + 'checkin-button-loading' }, '⌛️'),
-				h('div', { className: cls + 'checkin-button-success' }, '✅'),
-				h('div', { className: cls + 'checkin-button-fail' }, '❌'),
+				h('div', { className: cls + 'checkin-button-success' }, '✅ Gebucht'),
+				h('div', { className: cls + 'checkin-button-fail' }, '❌ Ausgebucht'),
+					h('div', { className: cls + 'checkin-button-unknown' }, '📞 Nicht verfügbar'),
 				h('div', { className: cls + 'checkin-button-start' }, 'Buchen')
 			]) : null,
 			_stopovers.length > 0 ? h('ul', {

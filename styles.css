@@ -144,7 +144,7 @@
 }
 
 .db-journey-ui-checkin-button {
-	width: 7.5em;
+	width: 10em;
 	height: 2.5em;
 	background-color: #fc0;
 	color: #000;
@@ -164,6 +164,7 @@
 .db-journey-ui-checkin-button.loading .db-journey-ui-checkin-button-loading { display: block; }
 .db-journey-ui-checkin-button.success .db-journey-ui-checkin-button-success { display: block; }
 .db-journey-ui-checkin-button.fail .db-journey-ui-checkin-button-fail { display: block; }
+.db-journey-ui-checkin-button.unknown .db-journey-ui-checkin-button-unknown { display: block; }
 
 .db-journey-ui-checkin-button-loading {
 	animation: spin 2s infinite linear;
