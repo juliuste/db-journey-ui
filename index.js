@@ -160,6 +160,20 @@ const setup = (formatTime, formatDelay, actions = {}) => {
 				nrOfStopovers,
 				transferPosition
 			])),
+			leg.line && leg.line.product === 'taxi' ? h('button', {
+				className: cls + 'checkin-button start',
+				value: JSON.stringify({
+					tripId: leg.tripId,
+					origin: leg.origin.id,
+					destination: leg.destination.id,
+					lineName: leg.line.name
+				})
+			}, [
+				h('div', { className: cls + 'checkin-button-loading' }, '⌛️'),
+				h('div', { className: cls + 'checkin-button-success' }, '✅'),
+				h('div', { className: cls + 'checkin-button-fail' }, '❌'),
+				h('div', { className: cls + 'checkin-button-start' }, 'Buchen')
+			]) : null,
 			_stopovers.length > 0 ? h('ul', {
 				className: cls + 'details'
 			}, _stopovers) : null

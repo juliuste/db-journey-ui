@@ -142,3 +142,34 @@
 	border-bottom-style: solid;
 	border-bottom-color: inherit;
 }
+
+.db-journey-ui-checkin-button {
+	width: 7.5em;
+	height: 2.5em;
+	background-color: #fc0;
+	color: #000;
+	cursor: default;
+}
+.db-journey-ui-checkin-button:active, .db-journey-ui-checkin-button:focus {
+	background-color: #fc0;
+	color: #000;
+}
+.db-journey-ui-checkin-button.start:active, .db-journey-ui-checkin-button.start:focus {
+	opacity: 0.75;
+}
+
+.db-journey-ui-checkin-button div { display: none; }
+.db-journey-ui-checkin-button.start { cursor: pointer; }
+.db-journey-ui-checkin-button.start .db-journey-ui-checkin-button-start { display: block; }
+.db-journey-ui-checkin-button.loading .db-journey-ui-checkin-button-loading { display: block; }
+.db-journey-ui-checkin-button.success .db-journey-ui-checkin-button-success { display: block; }
+.db-journey-ui-checkin-button.fail .db-journey-ui-checkin-button-fail { display: block; }
+
+.db-journey-ui-checkin-button-loading {
+	animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
