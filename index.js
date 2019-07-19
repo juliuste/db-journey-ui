@@ -90,7 +90,7 @@ const setup = (formatTime, formatDelay, actions = {}) => {
 			symbol = h('img', {
 				className: cls + 'product',
 				alt: mappedProduct,
-				src: `https://raw.githubusercontent.com/derhuerst/vbb-logos/v2/${mappedProduct}.svg?sanitize=true`
+				src: `https://raw.githubusercontent.com/derhuerst/vbb-logos/master/${mappedProduct}.svg?sanitize=true`
 			})
 
 			if (products[mappedProduct]) {
