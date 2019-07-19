@@ -96,6 +96,7 @@ const setup = (formatTime, formatDelay, actions = {}) => {
 				color = { fg: '#000', bg: '#fc0' }
 			} else if (products[mappedProduct]) {
 				color = {fg: '#fff', bg: products[mappedProduct].color}
+				if (mappedProduct === 'express') color.fg = '#000'
 			}
 		}
 
