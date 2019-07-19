@@ -171,7 +171,7 @@ const setup = (formatTime, formatDelay, actions = {}) => {
 			}, [
 				h('div', { className: cls + 'checkin-button-loading' }, '⌛️'),
 				h('div', { className: cls + 'checkin-button-success' }, '✅ Gebucht'),
-				h('div', { className: cls + 'checkin-button-fail' }, '❌ Ausgebucht'),
+				h('div', { className: cls + 'checkin-button-fail' }, '❌ Abgelehnt'),
 					h('div', { className: cls + 'checkin-button-unknown' }, '📞 Nicht verfügbar'),
 				h('div', { className: cls + 'checkin-button-start' }, 'Buchen')
 			]) : null,
