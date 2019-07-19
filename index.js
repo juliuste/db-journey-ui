@@ -17,6 +17,7 @@ const pedestrians = [
 const productMap = product => {
 	if (['nationalExpress', 'nationalExp', 'national'].includes(product)) return 'express'
 	if (['regionalExpress', 'regionalExp', 'regional'].includes(product)) return 'regional'
+	if (['taxi'].includes(product)) return 'demand-responsive-bus'
 	return product
 }
 
