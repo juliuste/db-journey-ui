@@ -92,8 +92,9 @@ const setup = (formatTime, formatDelay, actions = {}) => {
 				alt: mappedProduct,
 				src: `https://raw.githubusercontent.com/derhuerst/vbb-logos/master/${mappedProduct}.svg?sanitize=true`
 			})
-
-			if (products[mappedProduct]) {
+			if (line.product === 'taxi') {
+				color = { fg: '#000', bg: '#fc0' }
+			} else if (products[mappedProduct]) {
 				color = {fg: '#fff', bg: products[mappedProduct].color}
 			}
 		}
